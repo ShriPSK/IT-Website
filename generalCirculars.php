@@ -52,7 +52,7 @@
             </thead>
             <tbody>
         ';
-        $selectQuery = "select * from circular_data where type='Student' and month(date)=$month";
+        $selectQuery = "select * from circular_data where type='General' and month(date)=$month";
         $squery = mysqli_query($con, $selectQuery);
         while (($result = mysqli_fetch_assoc($squery))) {
         echo '
