@@ -1,0 +1,92 @@
+.phd{
+  display: grid;
+  gap:3em;
+  padding:2em 20%;
+  font-size: 0.7rem;
+}
+
+@media all and (min-width : 750px) {
+  .phd{
+    grid-template-columns: repeat(4 ,auto);
+    padding:3em 14em;
+  }
+  .phd .flip-card-front h2{
+    padding-top:6.5em;
+  }
+}
+.phd .flip-card {
+  background-color: transparent;
+  height: 40vh;
+  max-width: 90vw;
+  border: 1px solid #f1f1f1;
+  perspective: 1000px; 
+  border-radius: 2em;/* Remove this if you don't want the 3D effect */
+}
+
+/* This container is needed to position the front and back side */
+.phd .flip-card-inner {
+  position: relative;
+  width: inherit;
+  height: inherit;
+  text-align: center;
+  transition: transform 0.8s;
+  transform-style: preserve-3d;
+}
+
+/* Do an horizontal flip when you move the mouse over the flip box container */
+.phd .flip-card:hover .flip-card-inner {
+  transform: rotateY(180deg);
+  border-radius: 2em;
+}
+
+/* Position the front and back side */
+.phd .flip-card-front, .flip-card-back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  -webkit-backface-visibility: hidden; /* Safari */
+  backface-visibility: hidden;
+  border-radius: 2em;
+}
+
+/* Style the front side (fallback if image is missing) */
+.phd .flip-card-front {
+  color: white;
+  border-radius: 1.2em;
+}
+.phd .flip-card-front img{
+  position: absolute;
+  top:0;
+  left:0;
+  width:100%;
+  height:100%;
+  z-index:-1;
+}
+.phd .flip-card-front .img-bg{
+  position: absolute;
+  top:0;
+  left:0;
+  width:100%;
+  height:100%;
+  background-color: rgba(0, 0, 0, 0.533);
+  z-index: -1;
+  border-radius: 2em;
+}
+.phd img{
+  padding:2.2em;
+  border-radius: 2em;
+}
+.phd .flip-card-front h2{
+  font-weight: 600;
+  padding-top:6em;
+}
+/* Style the back side */
+.phd .flip-card-back {
+  background-color: #212529;
+  color: white;
+  transform: rotateY(180deg);
+}
+.phd .flip-card-back p{
+  padding:1em;
+  text-transform:capitalize;
+}

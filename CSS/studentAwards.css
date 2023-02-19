@@ -1,0 +1,38 @@
+.studentAwards {
+	display: grid;
+	gap: 0.7em;
+	justify-content: center;
+	padding: 2em;
+  position:relative
+}
+.studentAwards img {
+	width: 100%;
+	height: 100%;
+  border-radius: 0.2em;
+  box-shadow: 0 0 0.2em  #000;
+  position: relative;
+}
+.studentAwards img:hover{
+  transform: scale(1.1);
+  transition: 600ms;
+  z-index:1;
+}
+
+
+@media screen and (min-width: 922px) {
+	.studentAwards {
+		display: grid;
+		gap: 0.5em;
+		justify-content: center;
+		margin-inline: auto;
+		max-width: 90%;
+		grid-auto-flow: dense;
+		grid-template-columns: repeat(5, auto);
+	}
+  .studentAwards .img-r2 {
+    grid-row: span 2;
+  }
+  .studentAwards .img-c2 {
+    grid-column: span 2;
+  }
+}

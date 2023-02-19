@@ -1,0 +1,55 @@
+[
+  {
+    "id": 1,
+    "name": "Dr. V. Rhymend Uthariaraj",
+    "designation": "Professor",
+    "mobile": "",
+    "email": "rhymend@annauniv.edu",
+    "areaOfExpertise": "Computer Networks, Network Security, Pervasive Computing, Wireless Networks",
+    "img": "f1.webp",
+    "link":"https://annauniv.irins.org/profile/118033"
+  },
+  {
+    "id": 2,
+    "name": "Dr.B.Vinayagasundaram",
+    "designation": "Former HOD | Assosciate Professor",
+    "mobile": "",
+    "email": "bvsundaram@annauniv.edu",
+    "areaOfExpertise": "Adhoc Networks, Software Engineering, Computer Networks",
+    "img": "hod.webp",
+    "link":"https://annauniv.irins.org/profile/269368"
+  },
+  {
+    "id": 3,
+    "name": "Dr S Thamarai Selvi",
+    "designation": "Former HOD | Professor",
+    "mobile": "",
+    "email": "stselvi@annauniv.edu",
+    "areaOfExpertise": "Grid Computing, Cloud Computing and Neural Networks.",
+    "img": "hod1.webp",
+    "link":"https://annauniv.irins.org/profile/117758"
+  },
+  {
+    "id": 4,
+    "name": "Ms M.Monisha Devi",
+    "designation": "Teaching Fellow",
+    "mobile": "",
+    "email": "mmonishadevi.cse@gmail.com",
+    "areaOfExpertise": "Database Management System| Mobile Computing",
+    "img": "f4.webp",
+    "link":""
+  },{
+    "id": 5,
+    "name": "Dr. Dhananjay Kumar",
+    "designation": "Professor",
+    "mobile": "6021/6306",
+    "email": "dhananjay@annauniv.edu",
+    "areaOfExpertise": "Mobile Communication and Computing, Video Streaming and Analysis",
+    "orcidId": "0000-0003-3758-1841",
+    "ScopusId": "35411200500",
+    "ResearcherId": "H-9853-2012",
+    "GoogleScholarID": "OF9U2GMAAAAJ",
+    "img": "117881.webp",
+    "link": "https://annauniv.irins.org/profile/117881"
+  }
+]

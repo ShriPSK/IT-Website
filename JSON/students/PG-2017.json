@@ -1,0 +1,44 @@
+{
+    "data":[
+        {
+          "S.no": 1,
+          "name": "Ashvini V Jain",
+          "regNo": 2017611001
+        },
+        {
+          "S.no": 2,
+          "name": "C. Cathrindeboral",
+          "regNo": 2017611002
+        },
+        {
+          "S.no": 3,
+          "name": "P. Deepa",
+          "regNo": 2017611003
+        },
+        {
+          "S.no": 4,
+          "name": "M. Dinesh",
+          "regNo": 2017611004
+        },
+        {
+          "S.no": 5,
+          "name": "V.K. Jeevitha",
+          "regNo": 2017611005
+        },
+        {
+          "S.no": 6,
+          "name": "T. Ramakrishnan",
+          "regNo": 2017611006
+        },
+        {
+          "S.no": 7,
+          "name": "I. Silvia rose",
+          "regNo": 2017611007
+        },
+        {
+          "S.no": 8,
+          "name": "S. Yuvarani",
+          "regNo": 2017611008
+        }
+      ]
+}
