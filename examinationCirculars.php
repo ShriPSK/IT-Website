@@ -1,54 +1,71 @@
-<?php
-    $servername = "localhost";
-    $username = "root";
-    $password = "";
-    $dbname = "itdepartment";
+<?php require("templates/header.php"); ?>
+<?php require("connection.php"); ?><br><br><br><br>
+<h2 class="text-center">Examination Circulars</h2><br><br>
+<form method="post">&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;
+        <div class="container">
+            <div class="row">
+                <div class="col-3">
+                    <label>Select month</label>&emsp;&emsp;&emsp;&emsp;&emsp;
+                </div>
+                <div class="col-6">
+                <select name="month" class="form-select form-select-lg" style="width: 100%;" id="month">
+                    <option selected>Choose</option>
+                    <option value="1">January</option>
+                    <option value="2">February</option>
+                    <option value="3">March</option>
+                    <option value="4">April</option>
+                    <option value="5">May</option>
+                    <option value="6">June</option>
+                    <option value="7">July</option>
+                    <option value="8">August</option>
+                    <option value="9">September</option>
+                    <option value="10">October</option>
+                    <option value="11">November</option>
+                    <option value="12">December</option>
+                </select>
+                </div>
+                <div class="col-3">
+                    <center><input type="submit" class="btn border border-dark border-5 rounded-pill text-center" name="Submit" style="width:50%;"></center>
+                </div>
+            </div>
+        </div>
+    </form><br><br>
 
-    // Create connection
-    $con = mysqli_connect($servername, $username, $password, $dbname);
-    // Check connection
-    if (!$con) {
-        die("Connection failed: " . mysqli_connect_error);
-    } else{
-        echo "Connected to db";
+
+<?php
+    if(isset($_POST['Submit']))
+    {
+        if($_POST['month']=="Choose")   die('Select a month');
+        else        specificMonth($_POST['month'],$con);
     }
-?>
-<div class="col-lg-6 col-md-6 col-12">
-    <div class="card">
-        <div class="card-header text-center">
-        <h4>Records from Database</h4>
-    </div>
-    <div class="card-body">
-    <div class="table-responsive">
-        <table>
-            <thead>
-                <th>Circular Name</th>
-                <th>Date</th>
-                <th>Type</th>
+    
+    function specificMonth($month, $con ){
+        echo '
+        <div style="margin-left: 5%;margin-right: 5%;">
+        <table class="table table-hover">
+            <thead class="thead-dark">
+                <tr>
+                    <th>Circular Name</th>
+                    <th>Date</th>
+                    <th><center>View Circular</center></th>
+                </tr>
             </thead>
             <tbody>
-            <?php
-                $selectQuery = "select * from circular_data where type='Examination'";
-                $squery = mysqli_query($con, $selectQuery);
+        ';
+        $selectQuery = "select * from circular_data where type='Examination' and month(date)=$month";
+        $squery = mysqli_query($con, $selectQuery);
+        while (($result = mysqli_fetch_assoc($squery))) {
+        echo '
+        <tr>
+                <td>'.$result['circular_name'].'</td>
+                <td>'.$result['date'].'</td>
+        ';
+        $target="./PDF/circulars/".$result['filename'];
+        echo "<td><center><html><a href='test.php?file=$target' target='_blank'>View</a></html></center></td>";
+        echo "</tr>";
+        }
+    }
+    echo "</tbody></table></div></div></div>" ;
+    require("templates/footer.php"); 
 
-                while (($result = mysqli_fetch_assoc($squery))) {
-            ?>
-            <tr>
-                <td><?php echo $result['circular_name']; ?></td>
-                <td><?php echo $result['date']; ?></td>
-                <td><?php echo $result['type']; ?></td>
-                <td><?php echo $result['filename']; ?></td>
-                <?php 
-                    $target="./PDF/circulars/".$result['filename'];
-                    echo "<td><html><a href='test.php?file=$target' target='_blank'>View</a></html></td>"; 
-                ?>
-            </tr>
-            <?php
-                }
-            ?>
-            </tbody>
-        </table>			
-        </div>
-    </div>
-</div>
-
+?>

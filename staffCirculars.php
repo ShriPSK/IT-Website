@@ -1,4 +1,4 @@
-<?php require("templates/header.html"); ?>
+<?php require("templates/header.php"); ?>
 <?php require("connection.php"); ?><br><br><br><br>
 <h2 class="text-center">Staff Circulars</h2><br><br>
 <form method="post">&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;
@@ -25,7 +25,7 @@
                 </select>
                 </div>
                 <div class="col-3">
-                    <center><input type="submit" class="btn border border-dark border-5 rounded-pill text-center" name="Submit" style="width:50%;vertical-align:middle;"></center>
+                    <center><input type="submit" class="btn border border-dark border-5 rounded-pill text-center" name="Submit" style="width:50%;"></center>
                 </div>
             </div>
         </div>
@@ -35,7 +35,7 @@
 <?php
     if(isset($_POST['Submit']))
     {
-        if($_POST['month']=="Choose")   echo "<script> alert('Select a month');</script>";
+        if($_POST['month']=="Choose")   die('Select a month');
         else        specificMonth($_POST['month'],$con);
     }
     

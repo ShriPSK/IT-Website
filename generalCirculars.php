@@ -1,4 +1,4 @@
-<?php require("templates/header.html"); ?>
+<?php require("templates/header.php"); ?>
 <?php require("connection.php"); ?><br><br><br><br>
 <h2 class="text-center">General Circulars</h2><br><br>
 <form method="post">&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;
