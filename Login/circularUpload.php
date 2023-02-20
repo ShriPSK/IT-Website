@@ -1,19 +1,3 @@
-<?php
-    $servername = "localhost";
-    $username = "root";
-    $password = "";
-    $dbname = "itdepartment";
-
-    // Create connection
-    $con = mysqli_connect($servername, $username, $password, $dbname);
-    // Check connection
-    if (!$con) {
-        die("Connection failed: " . mysqli_connect_error);
-    } else{
-        echo "Connected to db";
-    }
-?>
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -25,7 +9,6 @@
 	<div class="container" style="margin-top:30px">
 		<div class="row">
 			<div class="col-lg-6 col-md-6 col-12">
-			<strong>Fill UserName and Upload PDF</strong>
 				<form method="post" enctype="multipart/form-data">
 					<?php
 						// If submit button is clicked
@@ -94,7 +77,7 @@
 					<div class="form-input py-2">
 						<div class="form-group">
 							<input type="text" class="form-control"
-								placeholder="Enter your name" name="name">
+								placeholder="Name of circular" name="name">
 						</div>								
 						<div class="form-group">
 							<input type="file" name="pdf_file"
@@ -106,7 +89,6 @@
                         <div class="form-group col-md-4">
                             <label for="type">Type</label>
                             <select id="type" name="type" class="form-control">
-								<option value="Choose">Choose</option>
                                 <option value="Staff">Staff</option>
                                 <option value="Student">Student</option>
                                 <option value="General">General</option>
