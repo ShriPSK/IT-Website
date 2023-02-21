@@ -1,14 +1,16 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-	<link rel="stylesheet" href=
-"https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css">
-	<link rel="stylesheet" href="style.css">
-</head>
+<?php
+	session_start();
+	include("../templates/header1.php");
+	include("../connection.php");
+?>
+
+<br><br>
 <body>
-	<div class="container" style="margin-top:30px">
+	
+	<div class="container cen" style="margin-top:30px" id="upload-form">
 		<div class="row">
-			<div class="col-lg-6 col-md-6 col-12">
+			<div class="col-lg-6 col-md-6 col-12" id="type1">
+			<strong class="n3">Fill UserName and Upload PDF</strong>
 				<form method="post" enctype="multipart/form-data">
 					<?php
 						// If submit button is clicked
@@ -77,7 +79,7 @@
 					<div class="form-input py-2">
 						<div class="form-group">
 							<input type="text" class="form-control"
-								placeholder="Name of circular" name="name">
+								placeholder="Enter your name" name="name">
 						</div>								
 						<div class="form-group">
 							<input type="file" name="pdf_file"
@@ -87,8 +89,9 @@
                             <input type="date" name="date" class="form-control" required>
                         </div>
                         <div class="form-group col-md-4">
-                            <label for="type">Type</label>
+                            <label for="type" id="type1">Type</label>
                             <select id="type" name="type" class="form-control">
+								<option value="Choose">Choose</option>
                                 <option value="Staff">Staff</option>
                                 <option value="Student">Student</option>
                                 <option value="General">General</option>
@@ -104,5 +107,5 @@
 			</div>		
 		</div>
 	</div>
+	<?php require("../templates/footer.php");?>
 </body>
-</html>
