@@ -67,7 +67,7 @@
                         <td>'.$result['circular_name'].'</td>
                         <td>'.$result['date'].'</td>
                 ';
-                $target="./PDF/circulars/".$result['filename'];
+                $target="../PDF/circulars/".$result['filename'];
                 echo "<td><center><html><a href='test.php?file=$target' target='_blank'>View</a></html></center></td>";
                 echo "</tr>";
              }
