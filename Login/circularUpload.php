@@ -3,15 +3,32 @@
 	include("../templates/header1.php");
 	include("../connection.php");
 ?>
+<head>
+<style>
+        .circular
+        {
+            border: 2px solid #808080;
+            border-radius: 30px;
+            width: 50%;
+            height: 50%;
+			/* display: flex; */
+			/* justify-content: center; */
+			margin-left: 25%;
 
+        }
+        ::placeholder
+        {
+            font-size: 18px;
+            font-color: red;
+            padding-left: 10px;
+        }
+    </style>
+</head>
 <br><br>
 <body>
-	
-	<div class="container cen" style="margin-top:30px" id="upload-form">
-		<div class="row">
-			<div class="col-lg-6 col-md-6 col-12" id="type1">
-			<strong class="n3">Fill UserName and Upload PDF</strong>
-				<form method="post" enctype="multipart/form-data">
+	<div class="circular_upload">
+				<form method="post" enctype="multipart/form-data" class="circular">
+					<br><center><h3>Upload PDF with Username</h3></center><br>
 					<?php
 						// If submit button is clicked
 						if ($_POST && isset($_POST['submit']))
@@ -74,21 +91,19 @@
 							<?php
 							}// end if
 						}// end if
-					?>
+					?><br>
+					<div class="form-group form-control-lg">
+						<input type="text" placeholder="Enter your name" name="name">
+					</div>
+					<div class="form-group form-control-lg">
+						<input type="file" placeholder="Enter file name" name="pdf_file" accept=".pdf" required>
+					</div>
 					
-					<div class="form-input py-2">
-						<div class="form-group">
-							<input type="text" class="form-control"
-								placeholder="Enter your name" name="name">
-						</div>								
-						<div class="form-group">
-							<input type="file" name="pdf_file"
-								class="form-control" accept=".pdf" required/>
-						</div>
-                        <div>
-                            <input type="date" name="date" class="form-control" required>
-                        </div>
-                        <div class="form-group col-md-4">
+					<div class="form-group form-control-lg">
+                        <input type="date" name="date" class="form-control" required>
+                    </div>
+
+					<div class="form-group form-control-lg">
                             <label for="type" id="type1">Type</label>
                             <select id="type" name="type" class="form-control">
 								<option value="Choose">Choose</option>
@@ -97,15 +112,13 @@
                                 <option value="General">General</option>
                                 <option value="Examination">Examination</option>
                             </select>
-                        </div>
-						<div class="form-group">
-							<input type="submit"
-								class="btnRegister" name="submit" value="Submit">
-						</div>
+                    </div>
+
+					<div class="form-group form-control-lg">
+						<center><input type="submit" style="padding: 10px;width: 20%;border-radius: 30px;" name="submit" value="submit"></center>
 					</div>
 				</form>
-			</div>		
-		</div>
+			</center>
 	</div>
 	<?php require("../templates/footer.php");?>
 </body>
