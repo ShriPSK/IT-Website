@@ -1,7 +1,15 @@
 <?php require("../templates/header1.php"); ?>
 <?php require("../connection.php"); ?><br><br><br><br>
+<head>
+    <script>
+        document.getElementById("select-month").addEventListener("submit",function(event)
+        {
+            event.preventDefault();
+        });
+    </script>
+</head>
 <h2 class="text-center">Staff Circulars</h2><br><br>
-<form method="post">&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;
+<form method="post" name="select-month"">&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;
         <div class="container">
             <div class="row">
                 <div class="col-3">
@@ -25,7 +33,7 @@
                 </select>
                 </div>
                 <div class="col-3">
-                    <center><input type="submit" class="btn border border-dark border-5 rounded-pill text-center" name="Submit" style="width:50%;vertical-align:middle;"></center>
+                    <center><input type="submit" value="submit" class="btn border border-dark border-5 rounded-pill text-center" name="Submit" style="width:50%;"></center>
                 </div>
             </div>
         </div>
@@ -40,7 +48,7 @@
     }
     
     function specificMonth($month, $con ){
-        $selectQuery = "select * from circular_data where type='General' and month(date)=$month";
+        $selectQuery = "select * from circular_data where type='Staff' and month(date)=$month";
         $squery = mysqli_query($con, $selectQuery);
         $count = mysqli_num_rows($squery);
         if($count==0)
