@@ -50,7 +50,7 @@
                 </div>
                 <div class="col-9">
                     <div class="heading">
-                        <div class="heading-title">Department of Information Technology</div>
+                        <div class="heading-title">Department of  Information  Technology</div>
                         <div class="heading-dept">Anna University , MIT Campus</div>
                     </div>
                 </div>
@@ -216,7 +216,7 @@
                 </div>
                 
             </div>
-            <div class="parent" style="z-index:6;">
+            <div class="parent" style="z-index:6;background-color: #ff322e;width:5%; justify-content: center; border-radius: 5%;">
                 <div>Circulars</div> 
                 <div class="child-1">                
                     
