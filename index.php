@@ -18,8 +18,7 @@
 </div>
 <div class="home-v3">
     <div class="home-bgDiv"></div>
-    <h2>Department Of</h2>
-    <h1 style="color:white;">Information Technology</h1>
+    <h2>Department Of Information Technology</h2>
     <h2>Anna University</h2>
 </div>
 <div class="card" style="margin-bottom:2em;">
